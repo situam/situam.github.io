@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>... - modules category</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+
+</head>
+
+<body>
+
+  <section id="nav">
+    <header>
+      <h1><a href="/">...</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/meta/">meta/</a></li>
+      <li><a href="/modules/">modules/</a></li>
+      <li><a href="/modules/archive/">modules/archive/</a></li>
+      <li><a href="/modules/pd/">modules/pd/</a></li>
+      <li><a href="/plans/">plans/</a></li>
+      <li><a href="/records/">records/</a></li>
+    </ul></nav>
+  </section>
+
+  <section id="content">
+  <p>situ.am/modules</p>
+
+  
+
+
+
+  <p>a collection of pieces to be put together in varying configurations</p>
+  </div>
+
+  <div class="entry-meta">
+    <div class="date">2020.01.23/modules/pd </div>
+  </div>
+  <div class="entry-content">
+  <h2><a href="/modules/pd/figure-ground-delayline-modulator">Figure-Ground Delayline Modulator</a></h2>
+  <!--<div class="meta"></div>-->
+
+
+
+
+  <p>the length of a sound-object figure modulates the length of a delayline<br />
+sounds received are fed back at varying, controllable, later times<br />
+varying the change in speed pitches the sound being fed back</p>
+<p>used in: mawamama t01</p>
+<p><img alt="screenshot" src="/patches/figure-ground-delayline-modulator.pd.png#pd-screenshot" /><br />
+<a href="/patches/figure-ground-delayline-modulator.pd">figure-ground-delayline-modulator.pd</a><br />
+<a href="/patches/figure-ground-delayline-modulator-help.pd">figure-ground-delayline-modulator-help.pd</a></p>
+  </div>
+
+  <div class="entry-meta">
+    <div class="date">2020.07.30/modules/archive | <a href="/roadmap/">roadmap</a>   </div>
+  </div>
+  <div class="entry-content">
+  <h2><a href="/modules/archive/annotator">annotator</a></h2>
+  <!--<div class="meta">  <a href="/roadmap/">roadmap</a>  </div>-->
+
+
+
+
+  <p>annotator _ presents recordings with possibly defined start position, end position, highlighted/annotate regions, and regions marked for removal (which are skipped over), offering an easy and potentially collaborative in-browser possibility of annotatating and non-destructively presenting snippets in the context of their longer recordings. regions made can be exported to a reaper project.</p>
+<p>how to use:</p>
+<ul>
+<li>click on recording to load soundfile, waveform, and start playing</li>
+<li>click and drag on waveform to create and select region</li>
+<li>type to annotate (some commands are interpreted):</li>
+<li><code>start</code><ul>
+<li>sets start position, fades in length of region</li>
+</ul>
+</li>
+<li><code>end</code><ul>
+<li>sets end position, fades out length of region</li>
+</ul>
+</li>
+<li><code>rm</code><ul>
+<li>skips region with fade-in/fade-out</li>
+<li>currently set to 500 ms fade</li>
+<li>[ ] add variable fade-in/fade-out times<ul>
+<li>eg. <code>rm 500</code></li>
+</ul>
+</li>
+<li>[ ] add crossfade</li>
+</ul>
+</li>
+</ul>
+<p>note: adding/changing annotations is currently password-protected<br />
+  - [ ] add guest user login</p>
+<h3>roadmap</h3>
+<ul>
+<li>[ ] offline mode</li>
+<li>[ ] video player - annotate video</li>
+<li>[ ] add highlight/star/rating capability</li>
+<li>[ ] fix sometimes being overwritten bug</li>
+<li>[ ] add play/pause button next to waveform</li>
+<li>[ ] display file length</li>
+<li>[ ] mark recordings for removal (syntax: rename with 'rm' at start of )</li>
+<li>[ ] for slomo videos: option to change playback speed and set+save default playspeed. how to deal with the slow-motion recordings (120fps captured on iPhone 5s)? maybe the annotator shows the fps and exposes the option to change playback speed, with the last-selected setting sticking?</li>
+<li>how to display multitude of files connecting to single recording moment? small mixer between mic input and sound output with preset setting?</li>
+</ul>
+  </div>
+
+  <div class="entry-meta">
+    <div class="date">2020.07.30/modules/pd </div>
+  </div>
+  <div class="entry-content">
+  <h2><a href="/modules/pd/out-recorder">out-recorder~</a></h2>
+  <!--<div class="meta"></div>-->
+
+
+
+
+  <p>stereo audio monitor and recorder. toggling record outputs two stereo .wav files to the disk - the audio sent to the first two inlets (x.wav) and the stereo microphone in (x-adc.wav). filenames are incremented. while recording, marks can be made, output to a text file on the disk. after recording, a voicememo can be optionally recorded from the microphone in (named as x-vm.wav).</p>
+<p>requires <code>rec-count.txt</code> to keep count.</p>
+<p>inlets: in-L, in-R, message</p>
+<p>messages:</p>
+<ul>
+<li><code>[/rec 1(</code> start recording two stereo audio files (inlets 1 2, adc~ 1 2)</li>
+<li><code>[/rec 0(</code> stop recording</li>
+<li><code>[/rec-voicememo 1(</code> start recording voicememo</li>
+<li><code>[/rec-voicememo 1(</code> stop recording voicememo</li>
+<li><code>[/mark 1(</code> outputs index of file followed by timestamp to <code>markers.txt</code></li>
+</ul>
+<p><a href="/patches/out-recorder~/out-recorder~.zip">out-recorder~.zip</a></p>
+  </div>
+
+  <div class="entry-meta">
+    <div class="date">2020.07.30/modules/pd </div>
+  </div>
+  <div class="entry-content">
+  <h2><a href="/modules/pd/container">container</a></h2>
+  <!--<div class="meta"></div>-->
+
+
+
+        <video src="/media/2020-07-30_194245.mp4#vertical" controls></video>
+
+  <p>a container MobMuPlat patch for pure data modules that currently consists of that runs on iphone:</p>
+<ul>
+<li>5d routing matrix for on-the-fly routing with scheduled attenuation fades between:</li>
+<li>2 filters</li>
+<li>2 pitch shift delays</li>
+<li>2 loopers</li>
+<li>buffer looper</li>
+<li>recording module</li>
+</ul>
+  </div>
+
+  <div class="entry-meta">
+    <div class="date">2020.07.30/modules/archive </div>
+  </div>
+  <div class="entry-content">
+  <h2><a href="/modules/archive/website">website</a></h2>
+  <!--<div class="meta"></div>-->
+
+
+
+
+  <p>the website is built on <a href="">pelican</a>, a static generator that converts folders of markdown files to a static site. this allows the entire structure of the site to exist simply as text files with minimal markup. it is mostly used as is, aside for the addition of the annotator javascript app, the flow of which is as follows:</p>
+<p>add session entry, all fields optional:</p>
+<pre><code>YYYY-MM-DD_test-entry.md
+
+---
+title: no title
+date: YYYY-MM-DD
+media: *.mp3, *.mp4, *.mp3
+cover: *.jpg
+---
+
+some description
+</code></pre>
+
+<p>the list of media files specified in the yaml metadata output a list of <code>div</code>s:</p>
+<pre><code>&lt;div class=&quot;sfplayer&quot; id=&quot;soundfile-1.mp3&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;sfplayer&quot; id=&quot;soundfile-2.mp3&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;sfplayer&quot; id=&quot;soundfile-3.mp3&quot;&gt;&lt;/div&gt;
+&lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p><code>app.js</code> on page load fills in each div with a sound file player interface. then it checks if there exist annotations for the soundfile, which are saved simply as .json files on a (currently separate) PHP server. if there are, a list of (labeled) regions and a title are filled in.</p>
+<p>the title is content-editable, meaning it can be edited directly on the page, and any changes made are saved live back to the soundfile.json file. any changes to the annotations are similarly auto-saved to the server. the php scripts that handle this are placed in a password-protected folder on the server, making for a crude but functional at this scale authentication-required to make changes to the annotations.</p>
+  </div>
+
+  <div class="entry-meta">
+    <div class="date">2020.07.28/modules </div>
+  </div>
+  <div class="entry-content">
+  <h2><a href="/modules/portable-collection">portable collection</a></h2>
+  <!--<div class="meta"></div>-->
+
+
+
+
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.44.0 (20200408.0750)
+ -->
+<!-- Title: G Pages: 1 -->
+<svg width="294pt" height="260pt"
+ viewBox="0.00 0.00 293.66 260.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>G</title>
+<!-- field recorder -->
+<g id="node1" class="node">
+<title>field recorder</title>
+<ellipse fill="none" stroke="black" cx="223.01" cy="-162" rx="57.69" ry="18"/>
+<text text-anchor="middle" x="223.01" y="-158.3" font-family="Times,serif" font-size="14.00">field recorder</text>
+</g>
+<!-- iphone -->
+<g id="node2" class="node">
+<title>iphone</title>
+<ellipse fill="none" stroke="black" cx="87.01" cy="-90" rx="34.39" ry="18"/>
+<text text-anchor="middle" x="87.01" y="-86.3" font-family="Times,serif" font-size="14.00">iphone</text>
+</g>
+<!-- field recorder&#45;&gt;iphone -->
+<g id="edge2" class="edge">
+<title>field recorder&#45;&gt;iphone</title>
+<path fill="none" stroke="black" d="M194.5,-146.33C172.73,-135.12 142.7,-119.66 119.91,-107.93"/>
+<polygon fill="black" stroke="black" points="121.44,-104.78 110.95,-103.32 118.24,-111.01 121.44,-104.78"/>
+</g>
+<!-- in&#45;ear monitors -->
+<g id="node3" class="node">
+<title>in&#45;ear monitors</title>
+<ellipse fill="none" stroke="black" cx="220.01" cy="-18" rx="65.79" ry="18"/>
+<text text-anchor="middle" x="220.01" y="-14.3" font-family="Times,serif" font-size="14.00">in&#45;ear monitors</text>
+</g>
+<!-- field recorder&#45;&gt;in&#45;ear monitors -->
+<g id="edge3" class="edge">
+<title>field recorder&#45;&gt;in&#45;ear monitors</title>
+<path fill="none" stroke="black" d="M222.65,-143.87C222.14,-119.67 221.2,-75.21 220.59,-46.39"/>
+<polygon fill="black" stroke="black" points="224.09,-46.11 220.38,-36.19 217.09,-46.26 224.09,-46.11"/>
+</g>
+<!-- iphone&#45;&gt;in&#45;ear monitors -->
+<g id="edge1" class="edge">
+<title>iphone&#45;&gt;in&#45;ear monitors</title>
+<path fill="none" stroke="black" d="M110.48,-76.65C130.15,-66.3 158.61,-51.32 181.59,-39.22"/>
+<polygon fill="black" stroke="black" points="183.52,-42.16 190.74,-34.41 180.26,-35.97 183.52,-42.16"/>
+</g>
+<!-- ms&#45;2 amp -->
+<g id="node6" class="node">
+<title>ms&#45;2 amp</title>
+<ellipse fill="none" stroke="black" cx="87.01" cy="-18" rx="46.59" ry="18"/>
+<text text-anchor="middle" x="87.01" y="-14.3" font-family="Times,serif" font-size="14.00">ms&#45;2 amp</text>
+</g>
+<!-- iphone&#45;&gt;ms&#45;2 amp -->
+<g id="edge7" class="edge">
+<title>iphone&#45;&gt;ms&#45;2 amp</title>
+<path fill="none" stroke="black" d="M87.01,-71.7C87.01,-63.98 87.01,-54.71 87.01,-46.11"/>
+<polygon fill="black" stroke="black" points="90.51,-46.1 87.01,-36.1 83.51,-46.1 90.51,-46.1"/>
+</g>
+<!-- em172 omni mic capsules -->
+<g id="node4" class="node">
+<title>em172 omni mic capsules</title>
+<ellipse fill="none" stroke="black" cx="105.01" cy="-234" rx="104.78" ry="18"/>
+<text text-anchor="middle" x="105.01" y="-230.3" font-family="Times,serif" font-size="14.00">em172 omni mic capsules</text>
+</g>
+<!-- em172 omni mic capsules&#45;&gt;field recorder -->
+<g id="edge4" class="edge">
+<title>em172 omni mic capsules&#45;&gt;field recorder</title>
+<path fill="none" stroke="black" d="M132.68,-216.59C149.27,-206.75 170.52,-194.14 188.24,-183.63"/>
+<polygon fill="black" stroke="black" points="190.32,-186.46 197.14,-178.35 186.75,-180.44 190.32,-186.46"/>
+</g>
+<!-- em172 omni mic capsules&#45;&gt;iphone -->
+<g id="edge5" class="edge">
+<title>em172 omni mic capsules&#45;&gt;iphone</title>
+<path fill="none" stroke="black" d="M54.33,-218.22C35.79,-210.09 16.73,-197.9 6.01,-180 -2.21,-166.27 -1.6,-158.07 6.01,-144 15.52,-126.41 33.69,-113.73 50.41,-105.18"/>
+<polygon fill="black" stroke="black" points="51.96,-108.32 59.48,-100.86 48.95,-102 51.96,-108.32"/>
+</g>
+<!-- portable battery -->
+<g id="node5" class="node">
+<title>portable battery</title>
+<ellipse fill="none" stroke="black" cx="81.01" cy="-162" rx="66.09" ry="18"/>
+<text text-anchor="middle" x="81.01" y="-158.3" font-family="Times,serif" font-size="14.00">portable battery</text>
+</g>
+<!-- portable battery&#45;&gt;iphone -->
+<g id="edge6" class="edge">
+<title>portable battery&#45;&gt;iphone</title>
+<path fill="none" stroke="black" d="M82.5,-143.7C83.16,-135.98 83.95,-126.71 84.69,-118.11"/>
+<polygon fill="black" stroke="black" points="88.18,-118.37 85.55,-108.1 81.21,-117.77 88.18,-118.37"/>
+</g>
+</g>
+</svg>
+
+<p>a small collection of physical modules with different possibilities for interconnection depending on the situation that arises, chunked as follows. in assembling this kit, preference is given to small and light vs big and bulky, trying to always carry with:</p>
+<ul>
+<li>field recorder (olympus ls-5)</li>
+<li>battery case</li>
+<li>battery</li>
+<li>otg+usb cable to connect field recorder to iphone</li>
+<li>usb/lighting cable to charge iphone</li>
+<li>iphone (running PD container patch)</li>
+<li>wide angle/macro lens</li>
+<li>crystal prism</li>
+<li>headphone case</li>
+<li>in-ear monitoring headphones</li>
+<li>omni mic caps (primo em172)</li>
+<li>headphone/mic splitter</li>
+<li>headphone splitter</li>
+</ul>
+<p>sometimes also:</p>
+<ul>
+<li>yamaha reface cp keyboard</li>
+<li>usb cable</li>
+<li>ms-2 amp</li>
+<li>bluetooth speaker</li>
+</ul>
+<h3>Digital Components</h3>
+<p>iphone runs MobMuPlat, a container app for Pure Data patches, which in turn runs:</p>
+<ul>
+<li>
+<p>container patch that holds the 5d routing matrix and modules to be developed along the way. (currently, filters, pitch-shifting delays, jumping loopers, buffer looper) (planned, resynth)</p>
+</li>
+<li>
+<p>recorder which captures raw mic input, sound that is output, and a voicememo</p>
+</li>
+</ul>
+  </div>
+
+  <div class="entry-meta">
+    <div class="date">2020.07.22/modules/archive </div>
+  </div>
+  <div class="entry-content">
+  <h2><a href="/modules/archive/archiving-workflow-current-status">archiving workflow (current status)</a></h2>
+  <!--<div class="meta"></div>-->
+
+
+
+
+  <p>currently:</p>
+<ul>
+<li>recordings are made on phone (in _ app), videos, voice memos, olympus field recorder</li>
+<li>after session, files saved to <code>0_process</code> folder on computer</li>
+<li>running <code>process.sh</code> script inside this folder:<ul>
+<li>prepends/renames files with creation timestamp</li>
+</ul>
+</li>
+<li>converts/compresses each file to the relevant filetype for the web-friendly archive<ul>
+<li>mov: mp4</li>
+<li>wav, aac: mp3</li>
+</ul>
+</li>
+<li>moves the original files to <code>1_originals</code></li>
+<li>moves the compressed files to <code>{static}/media</code> folder</li>
+<li>generates a markdown session file</li>
+</ul>
+<p>folder structure:</p>
+<pre><code>| 0_process
+  | *.mov
+  | *.wav
+  | *.aac
+  | process.sh
+
+| 1_originals
+
+</code></pre>
+
+<p>markdown file</p>
+<pre><code>---
+title: (insert title here)
+date: YYYY-MM-DD
+media: *.mp3, *.mp4, *.mp3
+---
+
+(insert description/related notes/ideas here, before forgetting)
+</code></pre>
+
+<p>ideally:</p>
+<ul>
+<li>save to dropbox/google drive folder</li>
+<li>server-side watcher auto converts and generates entry?</li>
+</ul>
+  </div>
+
+  <div class="entry-meta">
+    <div class="date">2020.06.23/modules/archive </div>
+  </div>
+  <div class="entry-content">
+  <h2><a href="/modules/archive/inverting-images-pd-screenshots">inverting images (pd screenshots)</a></h2>
+  <!--<div class="meta"></div>-->
+
+
+
+
+  <p>tiny markup in markdown allows for easy client-side image-inverting</p>
+<p>CSS:</p>
+<pre><code class="css">img[src$='#pd-screenshot'] {
+  filter: invert();
+  mix-blend-mode: screen;
+}
+</code></pre>
+
+<p>Markdown:</p>
+<pre><code class="markdown">![alt]({static}/patches/demo.pd.png#pd-screenshot)
+</code></pre>
+  </div>
+
+  <div class="entry-meta">
+    <div class="date">2020.06.20/modules/archive </div>
+  </div>
+  <div class="entry-content">
+  <h2><a href="/modules/archive/managing-recordings">managing recordings</a></h2>
+  <!--<div class="meta"></div>-->
+
+
+
+
+  <p>Generally, the archive/annotator displays a light, web-friendly version of the files for viewing, with the originals stored elsewhere, as the raw files quickly fill up storage space.</p>
+<p>The files are timestamped with their creation date (YYYY-MM-DD_HHMMSS.*) to enable easy sorting and individuality and reinforce that they were created at that time and not edited afterwards.</p>
+<h3>scripts</h3>
+<p>a collection of file managment bash scripts, meant to be run in a folder of raw files. requires <a href="">ffmpeg</a>.</p>
+<p><a href="/scripts/wav-to-mp3.sh">wav-to-mp3.sh</a><br />
+renames *.wav to file creation timestamp and compresses to mp3, returns list of mp3 files</p>
+<p><a href="/scripts/mov-to-mp4.sh">mov-to-mp4.sh</a><br />
+renames *.mov to file creation timestamp and compresses to mp4, returns list of mp4 files</p>
+<p><a href="/scripts/jpg-to-web.sh">jpg-to-web.sh</a><br />
+renames *.jpg to file created timestamp, compresses and resizes jpg images for web, returns list of jpg files</p>
+  </div>
+
+  <div class="entry-meta">
+    <div class="date">2020.06.19/modules/pd </div>
+  </div>
+  <div class="entry-content">
+  <h2><a href="/modules/pd/5d-routing-matrix">5D routing matrix</a></h2>
+  <!--<div class="meta"></div>-->
+
+
+
+
+  <p>A 5D routing matrix for PD affords programatic/instruction-based access to conduct signal routing on-the-fly with variable destinations, fade-time, and scheduling (wait x-ms first).</p>
+<p>Syntax:</p>
+<pre><code>[; route &lt;out&gt; &lt;in&gt; &lt;value&gt; &lt;ms-to-fade&gt; &lt;ms-to-wait&gt;(
+</code></pre>
+
+<p>This effectively decouples the patching interface from the PD GUI, allowing control to be given to, ie., the MobMuPLat touchscreen interface, which implements a grid control and 3 sliders (value, ms-to-fade, ms-to-wait).</p>
+<p>This also exposes the potential for live-coding/text-based triggering, ie:</p>
+<pre><code>[x]
+|
+[metro 100]
+|
+[; route &lt;dac~&gt; &lt;adc~ 1&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 1&gt; 0 10 20(
+[x]
+|
+[metro 101]
+|
+[; route &lt;dac~&gt; &lt;adc~ 2&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 2&gt; 0 10 20(
+</code></pre>
+  </div>
+
+  <div class="entry-meta">
+    <div class="date">2020.06.19/modules/pd </div>
+  </div>
+  <div class="entry-content">
+  <h2><a href="/modules/pd/buffer-looper">buffer looper</a></h2>
+  <!--<div class="meta"></div>-->
+
+
+
+
+  <ul>
+<li>[ ] document</li>
+</ul>
+  </div>
+
+  <div class="entry-meta">
+    <div class="date">2020.06.06/modules/pd </div>
+  </div>
+  <div class="entry-content">
+  <h2><a href="/modules/pd/ma-jumper">ma-jumper</a></h2>
+  <!--<div class="meta"></div>-->
+
+
+
+
+  <ul>
+<li>[ ] document</li>
+</ul>
+  </div>
+
+  <div class="entry-meta">
+    <div class="date">2020.06.06/modules/pd </div>
+  </div>
+  <div class="entry-content">
+  <h2><a href="/modules/pd/pd-smoother-t01">[pd smoother] T01</a></h2>
+  <!--<div class="meta"></div>-->
+
+
+
+        <div class="sf" id="2020-06-06_215730.ogg"></div>
+
+  <p>[pd smoother] handles timing for fading level to zero while changing playPos</p>
+<p><img alt="screenshot of pd-smoother" src="/patches/2020-06-06_smoother.pd.png#pd-screenshot" /></p>
+  </div>
+
+  <div class="entry-meta">
+    <div class="date">2020.05.18/modules </div>
+  </div>
+  <div class="entry-content">
+  <h2><a href="/modules/portable-sound-setup-options">portable sound setup options</a></h2>
+  <!--<div class="meta"></div>-->
+
+
+
+
+  <ul>
+<li>field recorder with rich expressive convulution/mixing control layer</li>
+<li>recorder with marker support</li>
+<li>visual sonifier</li>
+</ul>
+<h3>hardware options</h3>
+<h4>PiSound + Raspberry Pi</h4>
+<p>components required:<br />
+- RPI: 35€<br />
+- PiSound: 99€<br />
+- SD card: 10€<br />
+- Battery</p>
+<p>pros:<br />
+  - dedicated device<br />
+  - stereo audio in/out</p>
+<p>explorations:<br />
+  - [ ] document pisound explorations</p>
+<p>findings:<br />
+  - noisy preamp<br />
+  - package is bulky and heavy</p>
+<h4>Phone</h4>
+<ul>
+<li>iphone 5: 40€ (used)</li>
+<li>otg cable: 20€</li>
+<li>audio interface/field recorder: 60€</li>
+</ul>
+<p>decided to proceed with phone setup to reduce complexity, given the availability of MobMuPlat container app, and since it's a device most always carried around anyway.</p>
+<h4>Bela Mini</h4>
+<ul>
+<li>Bela Mini: ~67€, bela.io</li>
+<li>PocketBeagle-SC-569: 27€, mouser.de</li>
+<li>MicroSD card: ____</li>
+<li>Battery: <strong>_</strong> (3.3V)</li>
+</ul>
+  </div>
+
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/theme/js/wavesurfer.js"></script>
+    <script src="/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/theme/js/FileSaver.js"></script>
+    <script src="/theme/js/app.js"></script>
+  </section>
+</body>
+</html>

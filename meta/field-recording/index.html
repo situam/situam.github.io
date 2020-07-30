@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>field recording - ...</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+
+
+
+
+
+</head>
+
+<body>
+
+  <section id="nav">
+    <header>
+      <h1><a href="/">...</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/meta/">meta/</a></li>
+      <li><a href="/modules/">modules/</a></li>
+      <li><a href="/modules/archive/">modules/archive/</a></li>
+      <li><a href="/modules/pd/">modules/pd/</a></li>
+      <li><a href="/plans/">plans/</a></li>
+      <li><a href="/records/">records/</a></li>
+    </ul></nav>
+  </section>
+
+  <section id="content">
+  <div class="date">2020.06.24 </div>
+  <h2><a href="/meta/field-recording">field recording</a></h2>
+
+
+
+  <div class="entry-content">
+  <p>if the project seems broad, scattered, loosely organized, and unfocused, that's because it is. but one crucial theme is the experience of making-in-real-time, acting and reacting in a live way.</p>
+<p>the records then are soundscapes of a "genuine but ephemeral set of circumstances existing in a precise moment of time," rather than soundscapes "meticulously fabricated and controlled in the vacuum of an audio editor".<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
+<blockquote>
+<p>actual events from a specific time and place ... a moment’s explicit actuality and serendipitous fragility. (Swift 8)</p>
+<p>... a soundscape is not simply a sum of all these sounds; rather it is a particular subset filtered through the context of a given environmental condition (Swift 6)</p>
+</blockquote>
+<p>Curiously, wishing to capture these events often blocks these events from occurring. This could be an example of the observer effect, a "common phenomenon where the act of observation can alter the situation being observed." (Swift 3) Perhaps the psychic attention to recording takes valuable attention away from the actual act, a moment of flow, a sort of reset.</p>
+<p>Oft noticed is autotelic free play on an instrument -&gt; maybe a moment, groove, emerges - though to capture this! -&gt; stop playing, set up recorder, try to find it again, takes some time, energy is distracted, and the recording then captures this difference and distraction, not the original moment of free play and discovery.</p>
+<p>Several strategies to deal with this have been considered:</p>
+<ul>
+<li>a recorder handy and ready to start at the click of a button (requiring minimal attention)</li>
+<li>a recorder always running</li>
+<li>a buffer recorder (capturing the last x-seconds, after the fact)</li>
+</ul>
+<p>Setting these to run still requires some forethought, whereas the moments occur seemingly unexpectedly/unpredictably, and most notably while not recording. A possible possible solution is to intrinsically integrate the recorder into the sound ecosystem so that recording is a seamless act with listening while using the system.</p>
+<p>as an aside, the work is about sounds situated in spaces. &gt; One of Bernie Krause's tenets is that sounds should experienced in the context of their environment rather than attempting to isolate the sound. (Swift 10)</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Swift&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/theme/js/wavesurfer.js"></script>
+    <script src="/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/theme/js/FileSaver.js"></script>
+    <script src="/theme/js/app.js"></script>
+  </section>
+</body>
+</html>

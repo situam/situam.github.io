@@ -1,0 +1,205 @@
+:root {
+  --main-bg-color: #8092a4; /*#445054;*/
+  --main-color: #000;
+  --accent-color: rgba(206, 130, 75, .8);
+  --highlight-color: rgba(206, 130, 75, .1);
+
+  --main-font: 'Literata', serif;
+
+  --secondary-font: 'Roboto Mono', monospace;
+  --secondary-font-size: 0.8em;
+
+  --waveform-height: 240px;
+}
+
+* {
+  color: var(--main-color);
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 800px;
+  font-family: var(--main-font);
+  line-height: 1.6em;
+  font-size: 16px;
+  letter-spacing: 0.025em;
+  margin: 0;
+}
+
+body, #panel {
+  background-color: var(--main-bg-color);
+}
+
+#nav {
+  position: fixed;
+  float: left;
+}
+
+#content {
+  margin: 1em;
+  margin-left: 200px;
+  margin-bottom: var(--waveform-height);
+}
+
+.date {
+  margin-top: 6em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+/*  font-size: 2em;*/
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.05;
+}
+
+.entry-content h2 {
+/*  font-size: 1.2em;*/
+}
+
+nav#menu, nav#menu ul, nav#menu li {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  line-height: 1.4em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  /*list-style-type: circle;*/
+  margin-left: 2em;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+  padding-left: 1em;
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p a {
+  text-decoration: underline;
+}
+
+img, video, audio {
+  max-width: 100%;
+}
+
+img[src$='#pd-screenshot'] {
+  /*filter: invert();*/
+  mix-blend-mode: multiply;
+}
+
+video[src$='#vertical'] {
+  width: 60%;
+}
+
+input[type="checkbox"] {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+#inputtext {
+  position: absolute;
+  left: -10000px;
+}
+
+.chrome {
+  display: none;
+}
+
+.play {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 10px solid;
+  float: left;
+}
+
+.play:hover {
+  cursor: pointer;
+}
+
+region.wavesurfer-region:before {
+  content: attr(data-region-label);
+  position: absolute;
+  top: 0;
+}
+
+region.wavesurfer_handle, region.wavesurfer-handle-start, region.wavesurfer-handle-end {
+  width: 0px;
+}
+
+.sf {
+  width: 75%;
+  border-left: 2px solid;
+  margin: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 0.5em;
+}
+
+div.progress {
+  width: 0%;
+  height: 6px;
+}
+
+div.timestamp {
+
+}
+
+div.regions {
+
+}
+
+#log {
+  font-family: 'OCRB';
+  font-size: 13px;
+  color: white;
+  background: transparent;
+  resize: none;
+  overflow: hidden;
+  border: none;
+  position: fixed;
+  top: 0;
+  left: 250px;
+  padding: 2em;
+}
+
+#gui {
+  position: fixed;
+  top: 0;
+  right: 0;
+  text-align: right;
+}
+
+#panel {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px var(--main-color) solid;
+}
+
+.paginator {
+  font-family: var(--secondary-font);
+  font-size: var(--secondary-font-size);
+}
+
+#waveform {
+  height: var(--waveform-height);
+}
+
+code, .date, .meta, div.timestamp, div.sfName, wave, #sfname {
+  font-family: var(--secondary-font);
+  font-size: var(--secondary-font-size);
+}

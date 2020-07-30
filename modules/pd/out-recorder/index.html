@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>out-recorder~ - ...</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+
+
+
+
+
+</head>
+
+<body>
+
+  <section id="nav">
+    <header>
+      <h1><a href="/">...</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/meta/">meta/</a></li>
+      <li><a href="/modules/">modules/</a></li>
+      <li><a href="/modules/archive/">modules/archive/</a></li>
+      <li><a href="/modules/pd/">modules/pd/</a></li>
+      <li><a href="/plans/">plans/</a></li>
+      <li><a href="/records/">records/</a></li>
+    </ul></nav>
+  </section>
+
+  <section id="content">
+  <div class="date">2020.07.30 </div>
+  <h2><a href="/modules/pd/out-recorder">out-recorder~</a></h2>
+
+
+
+  <div class="entry-content">
+  <p>stereo audio monitor and recorder. toggling record outputs two stereo .wav files to the disk - the audio sent to the first two inlets (x.wav) and the stereo microphone in (x-adc.wav). filenames are incremented. while recording, marks can be made, output to a text file on the disk. after recording, a voicememo can be optionally recorded from the microphone in (named as x-vm.wav).</p>
+<p>requires <code>rec-count.txt</code> to keep count.</p>
+<p>inlets: in-L, in-R, message</p>
+<p>messages:</p>
+<ul>
+<li><code>[/rec 1(</code> start recording two stereo audio files (inlets 1 2, adc~ 1 2)</li>
+<li><code>[/rec 0(</code> stop recording</li>
+<li><code>[/rec-voicememo 1(</code> start recording voicememo</li>
+<li><code>[/rec-voicememo 1(</code> stop recording voicememo</li>
+<li><code>[/mark 1(</code> outputs index of file followed by timestamp to <code>markers.txt</code></li>
+</ul>
+<p><a href="/patches/out-recorder~/out-recorder~.zip">out-recorder~.zip</a></p>
+  </div>
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/theme/js/wavesurfer.js"></script>
+    <script src="/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/theme/js/FileSaver.js"></script>
+    <script src="/theme/js/app.js"></script>
+  </section>
+</body>
+</html>

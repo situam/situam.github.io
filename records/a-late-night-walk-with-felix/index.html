@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>a late night walk with felix - ...</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+
+
+
+
+    <meta name="tags" content="meta" />
+    <meta name="tags" content="field recording" />
+
+</head>
+
+<body>
+
+  <section id="nav">
+    <header>
+      <h1><a href="/">...</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/meta/">meta/</a></li>
+      <li><a href="/modules/">modules/</a></li>
+      <li><a href="/modules/archive/">modules/archive/</a></li>
+      <li><a href="/modules/pd/">modules/pd/</a></li>
+      <li><a href="/plans/">plans/</a></li>
+      <li><a href="/records/">records/</a></li>
+    </ul></nav>
+  </section>
+
+  <section id="content">
+  <div class="date">2020.06.17   <a href="/meta/">meta</a>  <a href="/field-recording/">field recording</a>  </div>
+  <h2><a href="/records/a-late-night-walk-with-felix">a late night walk with felix</a></h2>
+
+
+  <div class="sf" id="2020-06-17_2141.ogg"></div>
+  <div class="sf" id="2020-06-17_2207.ogg"></div>
+  <div class="sf" id="2020-06-17_matofelix.ogg"></div>
+
+  <div class="entry-content">
+  <p>finally got the ma patch working on phone.</p>
+<p>(while on a late night walk through the hills south of Oberstdorf)</p>
+<p>fe: so the main thing of your project is the process, the person using the technical stuff/the technique to create experiences?</p>
+<p>ma: so it's not end-result focused actually, it's about the process</p>
+<p>fe: haha "i changed my strategy to a process-based goal so i don't need results anymore" no but you will create results</p>
+<p>ma: what it does is embrace the spirit of meandering -</p>
+<p>fe: - improvisation -</p>
+<p>ma: yeah, you see where you end up and decide what to do with it there and liking to stop at the places in between really and much like how - and this is ma, setting up a container - and space in between can also be time in between. and in a process way, there's one vision of something to get to, to try and there, but of course there are happy accidents and detours, you haven't foreseen every step of the process, things happen that you don't see coming, that lend themselves to being explored more. so both in the process of doing this thing, it's often been going down rabbit holes which open up a whole other field of stuff to get into and learning different programming languages</p>
+<p>fe: i think you can bring in some examples, i lost you at programming</p>
+<p>ma: i think i'll go through the archive with them in sort of an informal way, you look, i mean we both have the website open, i can scroll through it, and when i say - when there a re turns in the road, i can point to where the turns in the road are, show a brief snippet - then this thing happened, and it was like, oh! it would be nice to explore this, so then i went and explored this for 20 experiments/4 hrs worth of recordings...</p>
+<p>fe: yeah that's the practical part of your thesis. but lovely idea to do that, i'm really amazed how you managed, this has the potential to really...</p>
+<p>ma: i think it as basically just how i was naturally doing things, when working just in an output-focused way, then you lose the stuff that was done before that, or it's not communicated, so noone else sees it, and it doesn't show the breadth of the thing, and in a presentation maybe one narrative is given: problem-&gt;solution-thing, which sound clear, but the process isn't a clean red line - the process is much closer to our experience today [] than our experience waling down this road</p>
+<p>fe: right but that's also an outcome. so <em>what are you gonna work on in the hut</em>?</p>
+<p>ma: i want to go for walks with this thing</p>
+<p>fe: but you have to keep the battery charged haha</p>
+<p>ma: yeah <em>i want to get out and actually use this thing and try and make sort of soundscapes that i like with whats around, and then also practice slow-walking, getting to a patch that's really loud to walk on and then really slowly walking</em>, being conscious of how loud it is, also it's being amplified</p>
+<p>fe: very mindful. so you're gonna try down, how you gonna keep track of what you record? cause i imagine you go 2days, 40 recordings</p>
+<p>ma: so i can also make markers along the way-</p>
+<p>fe: can you also name it?</p>
+<p>ma: what i wanna do is either that or a short voice recording function that references the filename, where you quickly describe what was happening -</p>
+<p>fe: that's what we also wanted to do with the other recordings!</p>
+<p>ma: yeah i'm trying to think about a good way to do basically what we naturally wanted to do</p>
+<p>fe: yeah and if you make it work in this setting you could also make it work -</p>
+<p>ma: it can also be brought into that setting exactly</p>
+<p>fe: but you can also choose a filename? that's one thing i find, that it's not just [timestamped]</p>
+<p>ma: i do like the timestamps, but i think the timestamp + something you can remember, but i think it's interesting to know when and what time of day this thing happening</p>
+<p>fe: maybe you put the climate in there as well..</p>
+<p>ma: and for sure where it was, where were you physically when it happened</p>
+<p>fe: didn't you talk about the archive also having some categories?</p>
+<p>ma: yeah you can tag the files with the place</p>
+<p>fe: or time of day so you can do a morning recording ep -</p>
+<p>ma: - mornings on mountains -</p>
+<p>fe: - late nights in cologne -</p>
+<p>ma: i just wanna try something quick with these cowbells, can you hold this a sec?</p>
+  </div>
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/theme/js/wavesurfer.js"></script>
+    <script src="/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/theme/js/FileSaver.js"></script>
+    <script src="/theme/js/app.js"></script>
+  </section>
+</body>
+</html>

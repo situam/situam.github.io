@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>inspiration from tim shaw - ...</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+
+
+
+
+
+</head>
+
+<body>
+
+  <section id="nav">
+    <header>
+      <h1><a href="/">...</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/meta/">meta/</a></li>
+      <li><a href="/modules/">modules/</a></li>
+      <li><a href="/modules/archive/">modules/archive/</a></li>
+      <li><a href="/modules/pd/">modules/pd/</a></li>
+      <li><a href="/plans/">plans/</a></li>
+      <li><a href="/records/">records/</a></li>
+    </ul></nav>
+  </section>
+
+  <section id="content">
+  <div class="date">2020.06.27 </div>
+  <h2><a href="/meta/inspiration-from-tim-shaw">inspiration from tim shaw</a></h2>
+
+
+  <div class="sf" id="2020-06-27_211535_mb-fan.ogg"></div>
+
+  <div class="entry-content">
+  <p>resonating while listening to <a href="https://www.mixcloud.com/resonanceextra/the-field-recording-show-8-wandering-sunday-14th-june-2020/">tim shaw on listening and field recording</a></p>
+<p>Tim Shaw, on indeterminancy and uncertainty in field recording and soundwalks, finds environmental sound, much richer to practice responding to specific sites/themes outside of studio. Listening being the key practice of the work.</p>
+<p>Field recording not as a documentary of one place to another, more as a live, performative act. Whereas traditionally it might be understood as: go somewhere with mics, sit, press record, bring it back to studio, edit/layer... the performative aspect of walking to the site, setting up, these gestures aren't visible. There's a dislocation between making and presentation. How to fold together?</p>
+<p>Recording, composing, improvising with the soundscapes that move through.</p>
+<p>Normally, recordings are deleted at the end of the walks. Flatten presentation and process, all mistakes like handling noise.</p>
+<p>Headphones allow dynamics to come-in - is it sounding in the world outside or it is processed through? Starting with omni-directional mics, then take recordings using contact/hydro/electromic.</p>
+<p>The system is malleable and shifting, like the soundscape, always shifting and indeterminate.</p>
+<p>Always tries to carry a recorder, decides to start when something catches interest, finding resonant spaces, or attaching a contact mic. Starts by walking and seeking with the ear and eye.</p>
+<p>How long to let the recorder roll for is question of composition in itself.</p>
+<p>Not about archiving, possesion, but about the process, and the making and the act of it is often more interesting than the recording itself. Using this process to learn the space, how does it react? So it's expansive - what are the possibilites, in the most holistic way?</p>
+<p>Not going into a space with too many ideas, being open to the unpredictability, allowing those unexpected events to be just as meaningful as those planned.</p>
+  </div>
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/theme/js/wavesurfer.js"></script>
+    <script src="/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/theme/js/FileSaver.js"></script>
+    <script src="/theme/js/app.js"></script>
+  </section>
+</body>
+</html>

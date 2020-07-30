@@ -1,0 +1,308 @@
+#N struct 1282-template float x float y float c float s float th float
+stretch array 1282-plus 1282-template-y array 1282-minus 1282-template-y
+;
+#N struct 1282-template-y float y;
+#N struct 1283-template float x float y float c float s float th float
+stretch array 1283-plus 1283-template-y array 1283-minus 1283-template-y
+;
+#N struct 1283-template-y float y;
+#N struct 1285-template float x float y float c float s float th float
+stretch array 1285-plus 1285-template-y array 1285-minus 1285-template-y
+;
+#N struct 1285-template-y float y;
+#N struct 1286-template float x float y float c float s float th float
+stretch array 1286-plus 1286-template-y array 1286-minus 1286-template-y
+;
+#N struct 1286-template-y float y;
+#N struct 1289-template float x float y float c float s float th float
+stretch array 1289-plus 1289-template-y array 1289-minus 1289-template-y
+;
+#N struct 1289-template-y float y;
+#N struct 1290-template float x float y float c float s float th float
+stretch array 1290-plus 1290-template-y array 1290-minus 1290-template-y
+;
+#N struct 1290-template-y float y;
+#N struct 1296-template float x float y float c float s float th float
+stretch array 1296-plus 1296-template-y array 1296-minus 1296-template-y
+;
+#N struct 1296-template-y float y;
+#N struct 1429-xt float x float y;
+#N struct 1429-yt float x float y;
+#N canvas 0 0 1366 746 12;
+#X declare -path audiolab;
+#X declare -path chair;
+#X declare -path pp;
+#X declare -path else;
+#X declare -path autelos;
+#N canvas 461 136 450 300 meta 0;
+#X obj 6 134 loadbang;
+#X msg 6 158 \; pd dsp 1;
+#X msg 81 157 recall 0;
+#X obj 81 181 s save;
+#X obj 6 12 declare -path audiolab;
+#X obj 6 32 declare -path chair;
+#X obj 6 52 declare -path pp;
+#X obj 6 72 declare -path else;
+#X obj 5 91 declare -path autelos;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X restore 6 16 pd meta;
+#X obj 134 106 pp.sfplayer~;
+#A saved normalize 1 | loop 1 | position% 98.9899 | position 371969
+| playback-speed 100 | play 1 | open /Users/user/Dropbox/Recordings/2020.03.01_Taiwan/taiwan-waves.wav
+| \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\;;
+#X obj 307 84 r save;
+#X msg 7 73 save 0;
+#X obj 7 97 s save;
+#X obj 345 138 pp.sfplayer~;
+#A saved normalize 1 | loop 1 | position% 54.5455 | position 124636
+| playback-speed 100 | play 1 | open /Users/user/Dropbox/Recordings/2020.03.01_Taiwan/taiwan-junglebirds.wav
+| \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\;;
+#X obj 518 116 r save;
+#X obj 142 148 env~;
+#X obj 142 172 - 60;
+#X obj 142 196 / 25;
+#X obj 142 244 line;
+#X obj 455 181 expr 1-$f1;
+#X msg 142 220 \$1 1000;
+#X obj 558 68 pp.sfplayer~;
+#A saved normalize 1 | loop 1 | position% 98.9899 | position 201939
+| playback-speed 100 | play 1 | open /Users/user/Dropbox/Recordings/2019.11.26_Gourbit/gourbitmtn/Gourbit-babbling-brook.wav
+| \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\;;
+#X obj 731 46 r save;
+#X obj 774 175 tapeshift~;
+#X obj 774 136 pp.vcfilter~;
+#A saved q 6 | frequency 3167 | reson | \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \;;
+#X obj 134 84 cnv 15 100 18 empty empty waves 2 8 1 16 -1 -262144 0
+;
+#X msg 988 106 transpose -19 \, window 394 \, delay 393 \, feedback
+0.715;
+#X obj 1002 32 loadbang;
+#X obj 345 115 cnv 15 100 18 empty empty jungle 2 8 1 16 -1 -262144
+0;
+#X obj 558 45 cnv 15 150 18 empty empty babbling_brook 2 8 1 16 -1
+-262144 0;
+#X obj 773 422 pp.pan~;
+#A saved cos | panorama 0.865385 | \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \;;
+#X obj 923 113 r save;
+#X obj 355 361 pp.pan~;
+#A saved cos | panorama -0.538462 | \; empty_slot \; empty_slot \;
+empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \;;
+#X obj 66 363 r save;
+#X obj 951 360 * 2;
+#X obj 951 384 - 1;
+#X obj 950 407 sig~;
+#X obj 709 245 r save;
+#X obj 145 267 hsl 100 10 0 1 0 1 empty empty empty -2 -8 0 10 -1 -262144
+-1 8455 1;
+#X obj 355 333 xfade~;
+#X obj 396 264 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X floatatom 393 285 0 0 0 0 - - -;
+#X text 378 263 A;
+#X text 409 279 B;
+#X obj 393 306 else/float2sig~ 500;
+#X obj 1057 222 pp.grainer~;
+#A saved int.grain-trigger 1 | random-position% 0.0134971 | position%
+93.6768 | random-q 0 | random-frequency 5000 | random-amplitude 0 |
+random-panorama 84 | random-pitch 0 | random-grainsize 0 | random-position
+14 | random-grain-distance 10 | env-shape 0.934066 | env-bias 0.197802
+| env-type 0 | play 0 | playback-speed 100 | q 1 | frequency 100 |
+filter-bypass 1 | amplitude 0 | panorama 0 | pitch 13 | grainsize 265
+| position 97167 | grain-distance 143 | open /Users/user/Documents/Pd/data/khg-organ.wav
+| \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\;;
+#X obj 1229 200 r save;
+#X obj 1056 200 cnv 15 150 18 empty empty granular 2 8 1 16 -1 -262144
+0;
+#X obj 133 461 throw~ l;
+#X obj 207 461 throw~ r;
+#X obj 355 400 throw~ l;
+#X obj 429 400 throw~ r;
+#X obj 559 461 throw~ l;
+#X obj 633 461 throw~ r;
+#X obj 774 461 throw~ l;
+#X obj 848 461 throw~ r;
+#X obj 1057 583 throw~ l;
+#X obj 1131 583 throw~ r;
+#X obj 130 637 catch~ l;
+#X obj 204 637 catch~ r;
+#X obj 133 421 pp.midside~;
+#A saved width 0 | \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 559 422 pp.midside~;
+#A saved width 0 | \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 560 268 pp.vcfilter-st~;
+#A saved q 0 | frequency 3367 | reson | \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \;;
+#X obj 772 113 cnv 15 150 18 empty empty tapeshift~ 2 8 1 16 -1 -262144
+0;
+#X msg 1002 133 transpose -7 \, window 200 \, delay 400 \, feedback
+0.687;
+#X obj 1057 515 pp.midside~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 601 141 pp.spectrum~;
+#X obj 256 294 line;
+#X msg 256 269 0.2 20000;
+#X obj 1156 307 line;
+#X msg 1156 282 0.2 20000;
+#X obj 346 499 tapeshift~;
+#X obj 346 682 pp.pan~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 131 613 cnv 15 100 18 empty empty out~ 2 8 1 16 -1 -262144 0
+;
+#X floatatom 37 237 3 0 0 0 - - -;
+#X floatatom 7 236 3 0 0 0 - - -;
+#X obj 7 211 ctlin;
+#X obj 7 258 bng 20 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 1293 221 position \$1;
+#X floatatom 1299 203 5 0 1e+21 0 - - -;
+#X obj 1303 176 m 11 103700;
+#X obj 346 720 throw~ l;
+#X obj 576 518 loadbang;
+#X obj 419 722 throw~ r;
+#X obj 347 460 pp.vcfilter~;
+#A saved q 6 | frequency 3167 | reson | \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \;;
+#X obj 499 434 r save;
+#X msg 576 543 transpose -7 \, window 200 \, delay 433 \, feedback
+0.35;
+#X obj 347 436 cnv 15 150 18 empty empty tapeshift~ 2 8 1 16 -1 -262144
+0;
+#X obj 560 306 midifade~ 10;
+#X obj 773 348 midifade~ 9;
+#X obj 1057 330 midifade~ 15;
+#X obj 134 317 midifade~ 8;
+#X obj 346 644 midifade~ 15;
+#X obj 356 208 midifade~ 11;
+#X obj 130 661 dac~ 3 4;
+#X connect 1 0 7 0;
+#X connect 1 0 83 0;
+#X connect 1 1 83 1;
+#X connect 2 0 1 3;
+#X connect 3 0 4 0;
+#X connect 5 0 76 0;
+#X connect 5 0 85 0;
+#X connect 5 1 85 1;
+#X connect 6 0 5 3;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 12 0;
+#X connect 10 0 30 0;
+#X connect 11 0 85 2;
+#X connect 12 0 10 0;
+#X connect 13 0 54 0;
+#X connect 13 1 54 1;
+#X connect 13 1 58 0;
+#X connect 14 0 13 3;
+#X connect 15 0 81 0;
+#X connect 16 0 15 0;
+#X connect 18 0 15 1;
+#X connect 19 0 56 0;
+#X connect 22 0 46 0;
+#X connect 22 1 47 0;
+#X connect 23 0 16 3;
+#X connect 24 0 42 0;
+#X connect 24 1 43 0;
+#X connect 25 0 24 2;
+#X connect 25 0 52 3;
+#X connect 25 0 53 3;
+#X connect 25 0 22 2;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 29 0 54 4;
+#X connect 31 0 24 0;
+#X connect 32 0 33 0;
+#X connect 33 0 36 0;
+#X connect 36 0 31 2;
+#X connect 37 0 82 0;
+#X connect 37 1 82 1;
+#X connect 38 0 37 1;
+#X connect 50 0 86 0;
+#X connect 51 0 86 1;
+#X connect 52 0 40 0;
+#X connect 52 1 41 0;
+#X connect 53 0 44 0;
+#X connect 53 1 45 0;
+#X connect 54 0 16 0;
+#X connect 54 0 80 0;
+#X connect 54 1 80 1;
+#X connect 56 0 15 1;
+#X connect 57 0 48 0;
+#X connect 57 1 49 0;
+#X connect 59 0 83 2;
+#X connect 60 0 59 0;
+#X connect 61 0 82 2;
+#X connect 62 0 61 0;
+#X connect 63 0 84 0;
+#X connect 64 0 73 0;
+#X connect 64 1 75 0;
+#X connect 67 0 69 0;
+#X connect 68 0 67 0;
+#X connect 68 1 66 0;
+#X connect 70 0 37 1;
+#X connect 71 0 70 0;
+#X connect 72 0 71 0;
+#X connect 74 0 78 0;
+#X connect 76 0 63 0;
+#X connect 77 0 76 3;
+#X connect 78 0 63 1;
+#X connect 80 0 53 0;
+#X connect 80 1 53 1;
+#X connect 81 0 22 0;
+#X connect 82 0 57 0;
+#X connect 82 1 57 1;
+#X connect 83 0 52 0;
+#X connect 83 1 52 1;
+#X connect 84 0 64 0;
+#X connect 85 0 31 0;
+#X connect 85 1 31 1;

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>website - ...</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+
+
+
+
+
+</head>
+
+<body>
+
+  <section id="nav">
+    <header>
+      <h1><a href="/">...</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/meta/">meta/</a></li>
+      <li><a href="/modules/">modules/</a></li>
+      <li><a href="/modules/archive/">modules/archive/</a></li>
+      <li><a href="/modules/pd/">modules/pd/</a></li>
+      <li><a href="/plans/">plans/</a></li>
+      <li><a href="/records/">records/</a></li>
+    </ul></nav>
+  </section>
+
+  <section id="content">
+  <div class="date">2020.07.30 </div>
+  <h2><a href="/modules/archive/website">website</a></h2>
+
+
+
+  <div class="entry-content">
+  <p>the website is built on <a href="">pelican</a>, a static generator that converts folders of markdown files to a static site. this allows the entire structure of the site to exist simply as text files with minimal markup. it is mostly used as is, aside for the addition of the annotator javascript app, the flow of which is as follows:</p>
+<p>add session entry, all fields optional:</p>
+<pre><code>YYYY-MM-DD_test-entry.md
+
+---
+title: no title
+date: YYYY-MM-DD
+media: *.mp3, *.mp4, *.mp3
+cover: *.jpg
+---
+
+some description
+</code></pre>
+
+<p>the list of media files specified in the yaml metadata output a list of <code>div</code>s:</p>
+<pre><code>&lt;div class=&quot;sfplayer&quot; id=&quot;soundfile-1.mp3&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;sfplayer&quot; id=&quot;soundfile-2.mp3&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;sfplayer&quot; id=&quot;soundfile-3.mp3&quot;&gt;&lt;/div&gt;
+&lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p><code>app.js</code> on page load fills in each div with a sound file player interface. then it checks if there exist annotations for the soundfile, which are saved simply as .json files on a (currently separate) PHP server. if there are, a list of (labeled) regions and a title are filled in.</p>
+<p>the title is content-editable, meaning it can be edited directly on the page, and any changes made are saved live back to the soundfile.json file. any changes to the annotations are similarly auto-saved to the server. the php scripts that handle this are placed in a password-protected folder on the server, making for a crude but functional at this scale authentication-required to make changes to the annotations.</p>
+  </div>
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/theme/js/wavesurfer.js"></script>
+    <script src="/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/theme/js/FileSaver.js"></script>
+    <script src="/theme/js/app.js"></script>
+  </section>
+</body>
+</html>

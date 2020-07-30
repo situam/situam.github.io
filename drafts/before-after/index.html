@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>before-after - ...</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+
+
+
+
+
+</head>
+
+<body>
+
+  <section id="nav">
+    <header>
+      <h1><a href="/">...</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/meta/">meta/</a></li>
+      <li><a href="/modules/">modules/</a></li>
+      <li><a href="/modules/archive/">modules/archive/</a></li>
+      <li><a href="/modules/pd/">modules/pd/</a></li>
+      <li><a href="/plans/">plans/</a></li>
+      <li><a href="/records/">records/</a></li>
+    </ul></nav>
+  </section>
+
+  <section id="content">
+  <div class="date">2020.07.30 </div>
+  <h2><a href="/drafts/before-after">before-after</a></h2>
+
+
+
+  <div class="entry-content">
+  <h2>Overview of Previous Works</h2>
+<ul>
+<li><strong>Making-Thinking an Audio Loop Station</strong><br />
+pd, interaction.</li>
+<li><strong>Improvising on Ostinato Feedback</strong><br />
+flow</li>
+<li><strong>Reveries for a Dimly-Lit Room</strong><br />
+ analog light apparatuses<ul>
+<li><strong>refract–defract</strong><br />
+<em>emergence</em> in crossryhthmic interference of simple analog light projection (lamp, water bottle, lens, color filter)</li>
+<li><strong>kinetik–kymatik</strong><br />
+lbasdf</li>
+</ul>
+</li>
+<li><strong>Towards a Modular Framework for DIY Musical Interfaces</strong><br />
+paper-pcb modular midi controller system</li>
+<li><strong>Emegergence in Slow-Evolving Soundscape</strong><br />
+documenting layers of emeregence</li>
+<li><strong>MAWAMAMA</strong><br />
+rhizomatic interference patterns</li>
+</ul>
+<h2>After</h2>
+<ul>
+<li><a href="http://iem.at">Computermusik</a>, IEM Graz</li>
+<li>2 year masters</li>
+<li>take composition classes</li>
+<li>collaborate with musicians</li>
+<li>
+<p>frequent nature trips</p>
+<ul>
+<li>possible thesis topic?</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.brown.edu/academics/music/graduate/composition">Music and Multimedia Composition</a>, Brown</p>
+</li>
+<li>5 year graduate master/Phd fully funded</li>
+<li>apply with strong portfolio, 3 letters of recommendation,</li>
+<li>2-3 students admitted per year, need GRE</li>
+</ul>
+  </div>
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/theme/js/wavesurfer.js"></script>
+    <script src="/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/theme/js/FileSaver.js"></script>
+    <script src="/theme/js/app.js"></script>
+  </section>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>archiving process - ...</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+
+
+
+
+
+</head>
+
+<body>
+
+  <section id="nav">
+    <header>
+      <h1><a href="/">...</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/meta/">meta/</a></li>
+      <li><a href="/modules/">modules/</a></li>
+      <li><a href="/modules/archive/">modules/archive/</a></li>
+      <li><a href="/modules/pd/">modules/pd/</a></li>
+      <li><a href="/plans/">plans/</a></li>
+      <li><a href="/records/">records/</a></li>
+    </ul></nav>
+  </section>
+
+  <section id="content">
+  <div class="date">2020.06.18 </div>
+  <h2><a href="/meta/archiving-process">archiving process</a></h2>
+
+
+
+  <div class="entry-content">
+  <p>(voice memo transcription, need to clean)</p>
+<p>the archiving process is to have the original raw file, with maybe some markers at the beginning fo the file to talk in what the context of the thing is (first section is meta description). to audition, drop it into a folder that compresses the original file, drops the original onto a hard drive. and it's available for audition in the annotator. layers to configure/toggle:</p>
+<p>-timestamp<br />
+-place<br />
+-mark points of time/regions<br />
+    -tag/make notes on these markers</p>
+<p>That's an annotation added in the process of reviewing. In the process of making/creating the moment you can easily make a marker or start and end a region, which saves some time, then when listening back you already have a place to start watching/listening.</p>
+<p>In addition to the manually entered annotation, any interactions with the patches are logged with a line which is the information-preserved-transformation of that interaction. so the interaction is say: route the mic to the speaker, fade up in 10 secs to 50%, do that in first in 5 seconds. this is a simple single line instruction, and this is written down in that way, possibly also as a human-readable, possibly easy to type, format. and this is saved as a log file and can also be toggled, shown on and off in the annotations.</p>
+<p>the benefit of also keeping track of all these digital interactions as instructions is one has the easy possibility to change later. what would have happen if we didn't trigger this? so you can remix it later by running it through the patch again, in real time, in this case loading the original file.</p>
+<p>the patch saves three files:<br />
+-text file: log and annotations<br />
+-sound: raw, straight from the microphone<br />
+-sound: from patch, exactly what's sent to speakers</p>
+<p>with the first two elements, we can recreate the third file, from the list of log instructions. then it can be revisited.</p>
+  </div>
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/theme/js/wavesurfer.js"></script>
+    <script src="/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/theme/js/FileSaver.js"></script>
+    <script src="/theme/js/app.js"></script>
+  </section>
+</body>
+</html>

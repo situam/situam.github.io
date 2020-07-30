@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>notes after talking to david - ...</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+
+
+
+
+
+</head>
+
+<body>
+
+  <section id="nav">
+    <header>
+      <h1><a href="/">...</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/meta/">meta/</a></li>
+      <li><a href="/modules/">modules/</a></li>
+      <li><a href="/modules/archive/">modules/archive/</a></li>
+      <li><a href="/modules/pd/">modules/pd/</a></li>
+      <li><a href="/plans/">plans/</a></li>
+      <li><a href="/records/">records/</a></li>
+    </ul></nav>
+  </section>
+
+  <section id="content">
+  <div class="date">2020.07.29 </div>
+  <h2><a href="/meta/notes-after-talking-to-david">notes after talking to david</a></h2>
+
+
+
+  <div class="entry-content">
+  <p>It starts from a fascination with soft fascinations - a richness in slowly-shifting subtlety and nuance, environments that offer restorative, not tiring, qualities (reference A.R.T.). and though promiment in visuals, also in sound - ambient sounds having noted influence on experience (reference proposals - emergence in slow-evolving soundscape, on minimalism, vertical time, masking, etc.). and wanting to experience this often and with a more or less active role.</p>
+<p>(note to self) as an aside<br />
+how to work with these in a real-time way? (it's hard to engage in processes that aren't real-time)<br />
+how to build a system that works for me?<br />
+how to organize recordings in a way that they can be easily returned to? to understand/retrieve/hear-again the recordings with context they were made in?<br />
+how to develop a research working attitude</p>
+<ul>
+<li>website as a working space - since it easily supports changing environments, sharing</li>
+<li>just start developing, trying, documenting everything</li>
+<li>make a roadmap, a place to keep/document also ideas that come up along the way and plans for making them real</li>
+</ul>
+<p>The work is then about setting up containers and letting moments emerge. Meandering - in a physical sense, slowly changing environments, and stopping at the places in-between, mediating in real-time the experience with the immediate soundscape. Being, listening, playing, capturing, processing, and afterwards, of listening to recordings, is also real-time, then juxtaposed with a new time and place.</p>
+<h3>Session Entry</h3>
+<p>After a session, recordings are collected from field recorder and iphone into a folder, a script creates a session entry. This holds the recordings, offers annotation posibilities for time-based media (video/sound), and a place for text entry - insights, feedback, note to self, areas for improvement.</p>
+<p>From here the relevant components can be moved to more suitable locations (under <a href="http://situ.am/plans">plans</a>, or further developed into <a href="http://situ.am/modules">modules</a>), but most importantly, the thoughts are recorded and collected in a place to be found again. to remember and remember to remember.</p>
+  </div>
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/theme/js/wavesurfer.js"></script>
+    <script src="/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/theme/js/FileSaver.js"></script>
+    <script src="/theme/js/app.js"></script>
+  </section>
+</body>
+</html>

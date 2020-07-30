@@ -1,0 +1,82 @@
+#N canvas 187 11 970 642 12;
+#X declare -path audiolab;
+#X declare -path autelos;
+#X declare -path else;
+#X obj 92 85 adc~;
+#X obj 1 24 declare -path audiolab;
+#X obj 81 497 pp.out~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 30 178 pp.vcfilter~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 453 23 pp.vcfilter~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 1 2 declare -path autelos;
+#X obj 486 74 tapeshift~;
+#X obj 14 357 osc~;
+#X floatatom 14 309 5 0 0 0 - - -;
+#X obj 1 46 declare -path else;
+#X obj 14 381 midifade~;
+#X obj 149 358 osc~;
+#X obj 149 382 midifade~;
+#X floatatom 149 313 5 0 0 0 - - -;
+#X obj 278 358 osc~;
+#X obj 278 382 midifade~;
+#X floatatom 278 313 5 0 0 0 - - -;
+#X obj 82 228 midifade~;
+#X obj 407 359 osc~;
+#X obj 407 383 midifade~;
+#X floatatom 407 314 5 0 0 0 - - -;
+#X obj 589 296 pp.vcfilter~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 589 334 tapeshift~;
+#X obj 149 290 * 2;
+#X obj 278 290 * 3;
+#X obj 407 289 * 4;
+#X text 255 532 21:30 kids;
+#X connect 0 0 3 0;
+#X connect 0 0 17 1;
+#X connect 0 1 4 0;
+#X connect 0 1 17 0;
+#X connect 0 1 21 0;
+#X connect 4 0 6 0;
+#X connect 6 0 21 0;
+#X connect 7 0 10 0;
+#X connect 8 0 7 0;
+#X connect 8 0 23 0;
+#X connect 8 0 24 0;
+#X connect 8 0 25 0;
+#X connect 10 0 2 1;
+#X connect 10 0 6 0;
+#X connect 11 0 12 0;
+#X connect 12 0 6 0;
+#X connect 13 0 11 0;
+#X connect 14 0 15 0;
+#X connect 15 0 6 0;
+#X connect 15 0 21 0;
+#X connect 16 0 14 0;
+#X connect 17 0 2 1;
+#X connect 17 1 2 0;
+#X connect 18 0 19 0;
+#X connect 19 0 6 0;
+#X connect 19 0 21 0;
+#X connect 20 0 18 0;
+#X connect 21 0 22 0;
+#X connect 23 0 13 0;
+#X connect 24 0 16 0;
+#X connect 25 0 20 0;
