@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faust on ESP32 A1S - ...</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+
+
+
+
+
+</head>
+
+<body>
+
+  <section id="nav">
+    <header>
+      <h1><a href="/">...</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/meta/">meta/</a></li>
+      <li><a href="/modules/">modules/</a></li>
+      <li><a href="/modules/archive/">modules/archive/</a></li>
+      <li><a href="/modules/pd/">modules/pd/</a></li>
+      <li><a href="/plans/">plans/</a></li>
+      <li><a href="/records/">records/</a></li>
+    </ul></nav>
+  </section>
+
+  <section id="content">
+  <div class="date">2020.09.09 </div>
+  <h2><a href="/records/faust-on-esp32-a1s">Faust on ESP32 A1S</a></h2>
+
+
+
+  <div class="entry-content">
+  <p>testing faust DSP on an inexpensive standalone audio board: <a href="https://www.banggood.com/ESP32-Aduio-Kit-WiFi-bluetooth-Module-ESP32-Serial-to-WiFi-Audio-Development-Board-with-ESP32-A1S-p-1449256.html?utm_source=googleshopping&amp;utm_medium=cpc_organic&amp;gmcCountry=US&amp;utm_content=minha&amp;utm_campaign=minha-us-pc&amp;currency=USD&amp;createTmp=1&amp;utm_source=googleshopping&amp;utm_medium=cpc_bgs&amp;utm_content=frank&amp;utm_campaign=frank-ssc-us-all-newcustom-ncv90-0623&amp;ad_id=443948744865&amp;gclid=Cj0KCQjw-uH6BRDQARIsAI3I-UclUYkp9j0ZbMQ14D0ANBMIgT---u0-o2Gvc6mJf-sALe2_ymsDBZIaAvCVEALw_wcB&amp;cur_warehouse=CN">A1s Audio Dev Kit</a></p>
+<ul>
+<li>stereo line/mic in</li>
+<li>stereo out</li>
+<li>runs on lipo battery, includes charging circuit</li>
+<li>
+<p>built-in amps for 2x speakers</p>
+</li>
+<li>
+<p><a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">driver</a> needed to recognize serial device on mac</p>
+</li>
+<li>
+<p><a href="ESP32-A1S audio dev board">https://www.diystompboxes.com/smfforum/index.php?topic=123939.msg1177779#msg1177779</a></p>
+</li>
+</ul>
+<p>Got it to work with following instructions found here and with bash scripts/modifying examples:<br />
+https://github.com/HolyCityAudio/ESP32/tree/master/faust<br />
+- downloaded, moved faust-build.sh and made executable as instructed, modified with serial port name.</p>
+<p>To add potis:</p>
+<p>MCP3008 - 8-Channel 10-Bit ADC<br />
+P0915N-FC15BR10K - 10K THT + Panel mount pot</p>
+<p>SPI default pin mapping:</p>
+<p>SPI   | MOSI      | MISO      | CLK     | CS<br />
+VSPI    | GPIO 23   | GPIO 19   | GPIO 18   | GPIO 5<br />
+HSPI  | GPIO 13 | GPIO 12   | GPIO 14   | GPIO 15</p>
+  </div>
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/theme/js/wavesurfer.js"></script>
+    <script src="/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/theme/js/FileSaver.js"></script>
+    <script src="/theme/js/app.js"></script>
+  </section>
+</body>
+</html>

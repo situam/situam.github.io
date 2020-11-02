@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>parcours-description - ...</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+
+
+
+
+
+</head>
+
+<body>
+
+  <section id="nav">
+    <header>
+      <h1><a href="/">...</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/meta/">meta/</a></li>
+      <li><a href="/modules/">modules/</a></li>
+      <li><a href="/modules/archive/">modules/archive/</a></li>
+      <li><a href="/modules/pd/">modules/pd/</a></li>
+      <li><a href="/plans/">plans/</a></li>
+      <li><a href="/records/">records/</a></li>
+    </ul></nav>
+  </section>
+
+  <section id="content">
+  <div class="date">2020.10.15 </div>
+  <h2><a href="/meta/parcours-description">parcours-description</a></h2>
+
+
+
+  <div class="entry-content">
+  <p>Why?<br />
+—<br />
+A fascination for meandering attention in soft fascinations and the ever-expanding accessibility of DIY sound processors invites an experimental process of real-time soundscape mediation.</p>
+<p>How?<br />
+—<br />
+In a cyclic process of meander-experimenting through slowly changing environments and capturing moments in-between, serendipity is embraced. Listening and responding, recording, listening again, mediating experience in situ.</p>
+<p>What?<br />
+—<br />
+situ.am is a live process archive, a open-source collection of tools for DIY in situ soundscape mediation.</p>
+<hr />
+<p>Why?<br />
+—<br />
+A fascination for meandering attention in environmental soundscapes and the ever-increasing accessibility of DIY sound processors invites an experimental process of real-time soundscape mediation.</p>
+<p>How?<br />
+—<br />
+In a cyclic experiment, meandering through slowly changing environments and recordings moments in-between, emergent interactions are embraced.</p>
+<p>What?<br />
+—<br />
+situ.am is a live process archive, an open-source collection of tools for DIY in situ soundscape mediation.</p>
+<p>Warum?<br />
+—<br />
+Die Faszination für wandernde Aufmerksamkeit innerhalb von Klanglandschaften und die ständig zunehmende Verfügbarkeit von DIY-Soundprozessoren lädt zu einem experimentellen Prozess der Echtzeit-Soundscape-Mediation ein.</p>
+<p>Wie?<br />
+—<br />
+In einem zyklischen Experiment, in dem die langsame Veränderung von<br />
+Umgebungen mit räumlichen Momentaufnahmen interagiert, wird die<br />
+Entstehung von unberechenbaren Zufallsmomenten willkommen geheissen.</p>
+<p>Was?<br />
+—<br />
+situ.am ist ein Live-Prozess-Archiv, eine Open-Source-Sammlung von Werkzeugen für DIY in situ Soundscape-Mediation.</p>
+  </div>
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/theme/js/wavesurfer.js"></script>
+    <script src="/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/theme/js/FileSaver.js"></script>
+    <script src="/theme/js/app.js"></script>
+  </section>
+</body>
+</html>
