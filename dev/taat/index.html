@@ -74,7 +74,7 @@
       </div>
     </div>
 
-  	<script type="module" src="/static/pad-taat.js"></script>
+  	<script type="module" src="static/pad-taat.js"></script>
     <script>
       window.onload = () => {
         var mediaFiles = document.querySelector('textarea').value.split("Media\n")[1].split("\n");
@@ -92,7 +92,7 @@
             var mediaEl = '<video src="media/' + String(item).split(" ")[1] + '" controls></video>';
           }
 
-          var caption = '<figcaption><a href="/media/' + fileName + '" target="_blank">'+fileName+'</a></figcaption>';
+          var caption = '<figcaption><a href="media/' + fileName + '" target="_blank">'+fileName+'</a></figcaption>';
 
           parent.insertAdjacentHTML('beforeend', mediaEl);
           parent.insertAdjacentHTML('beforeend', caption);
