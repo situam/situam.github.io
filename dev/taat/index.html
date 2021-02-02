@@ -87,12 +87,12 @@
           var i = String(index+1);
 
           if (String(item).startsWith("[image] ")) {
-            var mediaEl = '<img src="media/' + fileName + '">';
+            var mediaEl = '<img src="' + fileName + '">';
           } else {
-            var mediaEl = '<video src="media/' + String(item).split(" ")[1] + '" controls></video>';
+            var mediaEl = '<video src="' + String(item).split(" ")[1] + '" controls></video>';
           }
 
-          var caption = '<figcaption><a href="media/' + fileName + '" target="_blank">'+fileName+'</a></figcaption>';
+          var caption = '<figcaption><a href="' + fileName + '" target="_blank">'+fileName+'</a></figcaption>';
 
           parent.insertAdjacentHTML('beforeend', mediaEl);
           parent.insertAdjacentHTML('beforeend', caption);
