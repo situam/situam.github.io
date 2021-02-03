@@ -77,10 +77,20 @@
   	<script type="module" src="static/pad-taat.js"></script>
     <script>
       window.onload = () => {
-        var mediaFiles = document.querySelector('textarea').value.split("Media\n")[1].split("\n");
-        mediaFiles.forEach(insertVideo);
+          //populateMedia();
       };
-      function insertVideo(item, index) {
+
+      function populateMedia() {
+        var ta = document.querySelector('textarea').value;
+        if (ta) {
+          var mediaFiles = ta.split("Media\n")[1].split("\n");
+          mediaFiles.forEach(insertMedia);
+        } else {
+          setTimeout(populateMedia,500);
+        }
+      }
+
+      function insertMedia(item, index) {
         if (String(item).length>0) {
           var parent = document.querySelector("#media");
           var fileName = String(item).split(" ")[1];
