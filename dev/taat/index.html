@@ -71,7 +71,6 @@
         <textarea autocomplete="off" readonly autofocus></textarea>
       </div>
       <div id="media">
-        <h1>02 02 21_Archive</h1>
       </div>
     </div>
 
@@ -101,7 +100,7 @@
               parent.insertAdjacentHTML('beforeend', caption);
             }
           });
-          document.title = ta.value.split("\n")[0];
+          document.title = ta.split("\n")[0];
         } else {
           setTimeout(populateMedia,500);
         }
