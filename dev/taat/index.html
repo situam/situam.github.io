@@ -76,36 +76,32 @@
 
   	<script type="module" src="static/pad-taat.js"></script>
     <script>
-      window.onload = () => {
-          //populateMedia();
-      };
+      window.onload = populateMedia;
 
       function populateMedia() {
         var ta = document.querySelector('textarea').value;
         if (ta) {
           var mediaFiles = ta.split("Media\n")[1].split("\n");
-          mediaFiles.forEach(insertMedia);
+          mediaFiles.forEach((item,index)=>{
+            if (String(item).length>0) {
+              var parent = document.querySelector("#media");
+              var fileName = String(item).split(" ")[1];
+              var i = String(index+1);
+
+              if (String(item).startsWith("[image] ")) {
+                var mediaEl = '<img src="' + fileName + '">';
+              } else {
+                var mediaEl = '<video src="' + String(item).split(" ")[1] + '" controls></video>';
+              }
+
+              var caption = '<figcaption><a href="' + fileName + '" target="_blank">'+fileName+'</a></figcaption>';
+
+              parent.insertAdjacentHTML('beforeend', mediaEl);
+              parent.insertAdjacentHTML('beforeend', caption);
+            }
+          });
         } else {
           setTimeout(populateMedia,500);
-        }
-      }
-
-      function insertMedia(item, index) {
-        if (String(item).length>0) {
-          var parent = document.querySelector("#media");
-          var fileName = String(item).split(" ")[1];
-          var i = String(index+1);
-
-          if (String(item).startsWith("[image] ")) {
-            var mediaEl = '<img src="' + fileName + '">';
-          } else {
-            var mediaEl = '<video src="' + String(item).split(" ")[1] + '" controls></video>';
-          }
-
-          var caption = '<figcaption><a href="' + fileName + '" target="_blank">'+fileName+'</a></figcaption>';
-
-          parent.insertAdjacentHTML('beforeend', mediaEl);
-          parent.insertAdjacentHTML('beforeend', caption);
         }
       }
     </script>
