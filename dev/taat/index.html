@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width" />
+    <title>...</title>
     <style>
       * {
         font-family: Arial, sans-serif;
@@ -100,6 +101,7 @@
               parent.insertAdjacentHTML('beforeend', caption);
             }
           });
+          document.title = ta.value.split("\n")[0];
         } else {
           setTimeout(populateMedia,500);
         }
