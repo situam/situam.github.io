@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin:0;
+        padding:0;
+        background-color:black;
+        color:white;
+        font-family:monospace;
+      }
+      video {
+        width: 640px;
+        position: absolute;
+      }
+      #vid {
+        top: 40;
+        left: 40;
+      }
+      #overlay {
+        top: 80;
+        left: 80;
+        mix-blend-mode:screen;
+      }
+    </style>
+  </head>
+  <body>
+    <p>2021-02-08_T01</p>
+
+    <video id="vid" autoplay muted loop>
+      <source src="media/2021-02-05.mp4" type="video/mp4">
+    </video>
+
+    <video id="overlay" autoplay muted loop>
+      <source src="media/2021-02-05.mp4" type="video/mp4">
+    </video>
+
+    <script>
+      window.onload = () => {
+        //jumpAround("vid", 2000);
+        jumpAround("overlay", 3000);
+      };
+
+      function jumpAround(video, tick) {
+        vid = document.getElementById(video);
+        vid.currentTime = Math.random()*(vid.duration-(tick/1000));
+        setTimeout(()=>{jumpAround(video, tick)}, tick);
+      }
+    </script>
+  </body>
+</html>
